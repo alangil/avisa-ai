@@ -43,14 +43,14 @@ class DefinirAlarm : AppCompatActivity(), View.OnClickListener {
         Toast.makeText(this, getString(R.string.preencha_nome_remedio), Toast.LENGTH_LONG).show()
         else {
 
-            val calendar = Calendar.getInstance();
+            val calendar = Calendar.getInstance()
             val currentHour = calendar.get(Calendar.HOUR_OF_DAY)
             val currentMinutes = calendar.get(Calendar.MINUTE)
 
 
-            val timePickerDialog: TimePickerDialog = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                val timeHour = hourOfDay
-                val timeMinute = minute
+            val timePickerDialog = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                val timeHour: Int = hourOfDay
+                val timeMinute: Int = minute
 
                 val intent = Intent(AlarmClock.ACTION_SET_ALARM)
                 intent.putExtra(AlarmClock.EXTRA_HOUR, timeHour)
