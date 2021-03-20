@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.view.View
-import android.widget.TimePicker
 import android.widget.Toast
-import androidx.core.view.get
 import kotlinx.android.synthetic.main.activity_definir_alarm.*
 import java.util.*
 
@@ -28,8 +26,8 @@ class DefinirAlarm : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
 
         val id = v.id
-        //if (id == R.id.timePicker) setTime();
-        if (id == R.id.buttonSetAlarm) setAlarm();
+        //if (id == R.id.timePicker) setTime()
+        if (id == R.id.buttonSetAlarm) setAlarm()
 
 
     }
@@ -45,14 +43,14 @@ class DefinirAlarm : AppCompatActivity(), View.OnClickListener {
         Toast.makeText(this, getString(R.string.preencha_nome_remedio), Toast.LENGTH_LONG).show()
         else {
 
-            var calendar = Calendar.getInstance();
-            var currentHour = calendar.get(Calendar.HOUR_OF_DAY)
-            var currentMinutes = calendar.get(Calendar.MINUTE)
+            val calendar = Calendar.getInstance();
+            val currentHour = calendar.get(Calendar.HOUR_OF_DAY)
+            val currentMinutes = calendar.get(Calendar.MINUTE)
 
 
-            var timePickerDialog: TimePickerDialog = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                var timeHour = hourOfDay
-                var timeMinute = minute
+            val timePickerDialog: TimePickerDialog = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                val timeHour = hourOfDay
+                val timeMinute = minute
 
                 val intent = Intent(AlarmClock.ACTION_SET_ALARM)
                 intent.putExtra(AlarmClock.EXTRA_HOUR, timeHour)
