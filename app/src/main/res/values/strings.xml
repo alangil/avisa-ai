@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Avisa Ai</string>
+    <string name="preencha_nome_remedio">Preencha o nome do remédio!</string>
 </resources>
