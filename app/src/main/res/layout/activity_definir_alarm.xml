@@ -4,34 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DefinirAlarm"
+    android:padding="20dp"
+    android:gravity="center"
     android:orientation="vertical"
-    android:layout_margin="20dp"
-    android:gravity="center">
+    android:background="@color/light_green"
+    tools:context=".view.DefinirAlarm">
 
     <EditText
         android:id="@+id/edit_quantidade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:hint="Quantidade disponível:"
-        />
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/editMediName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_marginTop="20dp"
         android:hint="Nome do remédio:"
-        />
+        android:inputType="textPersonName" />
+
     <Button
         android:id="@+id/buttonSetAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Definir Horário"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center"/>
+        android:text="Definir Horário" />
 
 </LinearLayout>

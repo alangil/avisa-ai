@@ -4,31 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:padding="20dp"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/edit_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nome:"
-        android:inputType="textPersonName" />
+    android:background="@color/light_green"
+    tools:context=".view.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_gravity="center"
-        android:text="Informe seu nome!"
+        android:text="Bem Vindo ao Avisa Aí! O que deseja fazer?"
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_set_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:padding="15dp"
-        android:text="Entrar" />
+        android:text="Definir novo alarme" />
+
+
+    <Button
+        android:id="@+id/button_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:text="Meus Remédios" />
+
+    <Button
+        android:id="@+id/button_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:text="Modificar Alarmes" />
 
 </LinearLayout>
