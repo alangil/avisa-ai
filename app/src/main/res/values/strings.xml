@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">Avisa Aí! ;)</string>
+    <string name="wellcome">Bem Vindo ao Avisa Aí! O que deseja fazer?</string>
+    <string name="definir_novo_alarme">Definir novo alarme</string>
+    <string name="meus_remedios">Meus Remédios</string>
+    <string name="modificar_alarmes">Modificar Alarmes</string>
     <string name="preencha_campos">Preencha todos os campos!</string>
     <string name="nao_existe_app_suporte">Não existe nenhum App que suporte essa ação!</string>
     <string name="informe_seu_nome">Informe seu nome!</string>
     <string name="start">Começar</string>
+    <string name="save">Salvar</string>
+    <string name="nome_do_remedio">Nome do remédio:</string>
+    <string name="qnt_dispo">Quantidade disponível:</string>
+    <string name="new_qnt_dispo">Nova quantidade disponível:</string>
+    <string name="seus_remedios_e_qnt">Seus remédios e quantidades cadastradas =] :</string>
+    <string name="def_horario">Definir Horário:</string>
 </resources>

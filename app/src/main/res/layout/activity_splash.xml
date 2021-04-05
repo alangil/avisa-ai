@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_green"
+    android:background="@drawable/gradient_list"
     android:padding="16dp"
+    android:id="@+id/splash_layout"
     tools:context=".view.SplashActivity">
+
 
     <TextView
         android:id="@+id/text_app_name"
@@ -23,19 +25,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/ic_baseline_watch_white"
-        app:layout_constraintTop_toBottomOf="@id/text_app_name"
-        app:layout_constraintLeft_toLeftOf="@id/text_app_name"
-        app:layout_constraintRight_toRightOf="@id/text_app_name"
-        android:layout_marginTop="16dp"/>
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@mipmap/ic_launcher_pill_foreground"/>
+
 
     <Button
         android:id="@+id/button_start"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:layout_height="64dp"
+        android:background="@drawable/ic_baseline_watch_white"
         android:text="@string/start"
         android:textColor="@color/white"
         app:layout_constraintHorizontal_bias="1.0"

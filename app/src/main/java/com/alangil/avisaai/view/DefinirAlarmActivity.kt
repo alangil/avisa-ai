@@ -1,15 +1,12 @@
 package com.alangil.avisaai.view
 
-import android.annotation.SuppressLint
 import android.app.TimePickerDialog
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.alangil.avisaai.R
 import com.alangil.avisaai.viewmodel.DefinirAlarmViewModel
@@ -17,13 +14,17 @@ import kotlinx.android.synthetic.main.activity_definir_alarm.*
 import java.util.*
 
 
-class DefinirAlarm : AppCompatActivity(), View.OnClickListener {
+class DefinirAlarmActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mViewModel: DefinirAlarmViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_definir_alarm)
+
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
 
         mViewModel = ViewModelProvider(this).get(DefinirAlarmViewModel::class.java)
 
@@ -55,7 +56,7 @@ class DefinirAlarm : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun observe(){
-        mViewModel.saveMedicine.observe(this, androidx.lifecycle.Observer {
+        mViewModel.saveMedicine.observe(this, {
             if(it){
                 edit_quantidade.setText("")
                 editMediName.setText("")
@@ -69,7 +70,7 @@ class DefinirAlarm : AppCompatActivity(), View.OnClickListener {
         buttonSetAlarm.setOnClickListener(this)
     }
 
-    fun setAlarm(mediName: String, mediQnt: String) {
+    private fun setAlarm(mediName: String, mediQnt: String) {
         val calendar = Calendar.getInstance()
         val currentHour = calendar.get(Calendar.HOUR_OF_DAY)
         val currentMinutes = calendar.get(Calendar.MINUTE)

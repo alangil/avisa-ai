@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.widget.Toast
 import com.alangil.avisaai.service.constants.DataBaseConstants
+import com.alangil.avisaai.service.constants.MedicineConstants
 import com.alangil.avisaai.service.model.MedicineModel
 import java.lang.Exception
 
@@ -70,13 +71,16 @@ class MedicineRepository private constructor(context: Context) {
                 null
             )
 
-            if (cursor != null && cursor.count > 0){
-                while (cursor.moveToNext()){
-                    val id = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.MEDICINE.COLUMNS.ID))
-                    val name = cursor.getString(cursor.getColumnIndex(DataBaseConstants.MEDICINE.COLUMNS.NAME))
-                    val qnt = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.MEDICINE.COLUMNS.QUANTITY))
+            if (cursor != null && cursor.count > 0) {
+                while (cursor.moveToNext()) {
+                    val id =
+                        cursor.getInt(cursor.getColumnIndex(DataBaseConstants.MEDICINE.COLUMNS.ID))
+                    val name =
+                        cursor.getString(cursor.getColumnIndex(DataBaseConstants.MEDICINE.COLUMNS.NAME))
+                    val qnt =
+                        cursor.getInt(cursor.getColumnIndex(DataBaseConstants.MEDICINE.COLUMNS.QUANTITY))
 
-                    val medicine = MedicineModel(name, qnt)
+                    val medicine = MedicineModel(id, name, qnt)
                     list.add(medicine)
                 }
             }
@@ -86,10 +90,52 @@ class MedicineRepository private constructor(context: Context) {
         } catch (e: Exception) {
             list
         }
+    }
 
+    fun get(id: Int): MedicineModel? {
 
+        var medicine: MedicineModel? = null
 
-        return list
+        return try {
+            val db = mMedicineDataBaseHelper.readableDatabase
+
+            val projection = arrayOf(
+                DataBaseConstants.MEDICINE.COLUMNS.NAME,
+                DataBaseConstants.MEDICINE.COLUMNS.QUANTITY
+            )
+
+            val selection = DataBaseConstants.MEDICINE.COLUMNS.ID + " = ?"
+            val args = arrayOf(id.toString())
+
+            val cursor = db.query(
+                DataBaseConstants.MEDICINE.TABLE_NAME,
+                projection,
+                selection,
+                args,
+                null,
+                null,
+                null
+            )
+
+            if(cursor != null && cursor.count > 0){
+                cursor.moveToFirst()
+
+                val name =
+                    cursor.getString(cursor.getColumnIndex(DataBaseConstants.MEDICINE.COLUMNS.NAME))
+                val qnt =
+                    cursor.getInt(cursor.getColumnIndex(DataBaseConstants.MEDICINE.COLUMNS.QUANTITY))
+
+                medicine = MedicineModel(id, name, qnt)
+
+            }
+
+            cursor?.close()
+
+            medicine
+        } catch (e: Exception) {
+            medicine
+        }
+
     }
 
 
@@ -102,8 +148,8 @@ class MedicineRepository private constructor(context: Context) {
             contentValues.put(DataBaseConstants.MEDICINE.COLUMNS.NAME, medicine.nomeMedice)
             contentValues.put(DataBaseConstants.MEDICINE.COLUMNS.QUANTITY, medicine.qntMedice)
 
-            val selection = DataBaseConstants.MEDICINE.COLUMNS.NAME + " = ?"
-            val args = arrayOf(medicine.nomeMedice)
+            val selection = DataBaseConstants.MEDICINE.COLUMNS.ID + " = ?"
+            val args = arrayOf(medicine.id.toString())
 
             db.update(DataBaseConstants.MEDICINE.TABLE_NAME, contentValues, selection, args)
 

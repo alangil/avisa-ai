@@ -1,6 +1,7 @@
 package com.alangil.avisaai.view
 
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,6 +18,12 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         if (supportActionBar != null) {
             supportActionBar!!.hide()
         }
+
+        val mContraintLayout = splash_layout
+        val mAnimationDrawable = mContraintLayout.background as AnimationDrawable
+        mAnimationDrawable.setEnterFadeDuration(1500)
+        mAnimationDrawable.setExitFadeDuration(3500)
+        mAnimationDrawable.start()
 
         setListeners()
 

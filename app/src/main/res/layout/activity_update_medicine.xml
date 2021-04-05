@@ -7,10 +7,10 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".view.DefinirAlarmActivity">
+    tools:context=".view.UpdateMedicineActivity">
 
     <EditText
-        android:id="@+id/editMediName"
+        android:id="@+id/edit_medi_name_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -20,22 +20,22 @@
         android:textColorHint="@color/white" />
 
     <EditText
-        android:id="@+id/edit_quantidade"
+        android:id="@+id/edit_quantidade_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="@string/qnt_dispo"
+        android:hint="@string/new_qnt_dispo"
         android:inputType="number"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
 
     <Button
-        android:id="@+id/buttonSetAlarm"
+        android:id="@+id/button_save_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="@string/def_horario" />
+        android:text="@string/save" />
 
 </LinearLayout>

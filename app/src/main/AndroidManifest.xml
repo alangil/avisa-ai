@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AvisaAi">
+        <activity android:name=".view.UpdateMedicineActivity"/>
+        <activity android:name=".view.AllMedicinesActivity" />
         <activity android:name=".view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.DefinirAlarm" />
-        <activity android:name=".view.MainActivity"/>
+        <activity android:name=".view.DefinirAlarmActivity" />
+        <activity android:name=".view.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

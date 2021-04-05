@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.alangil.avisaai.service.repository.MedicineRepository
 import com.alangil.avisaai.service.model.MedicineModel
 
@@ -17,7 +16,7 @@ class DefinirAlarmViewModel(application: Application) : AndroidViewModel(applica
     val saveMedicine: LiveData<Boolean> = mSaveMedicine
 
     fun save(mediName: String, mediQnt: Int){
-        val medicine = MedicineModel(mediName, mediQnt)
+        val medicine = MedicineModel(nomeMedice = mediName,qntMedice =  mediQnt)
         mSaveMedicine.value = mMediRepository.save(medicine)
     }
 

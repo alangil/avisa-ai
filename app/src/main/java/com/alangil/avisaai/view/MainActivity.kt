@@ -13,7 +13,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        title = getString(R.string.app_name)
+
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
 
         setListeners()
 
@@ -24,10 +27,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val id = v.id
 
         if (id == button_set_new.id) {
-            startActivity(Intent(this, DefinirAlarm::class.java))
+            startActivity(Intent(this, DefinirAlarmActivity::class.java))
         }
         if (id == R.id.button_change) {
             abrirAlarmes()
+        }
+
+        if(id == R.id.button_all_medicines){
+            startActivity(Intent(this, AllMedicinesActivity::class.java))
         }
 
     }
@@ -36,6 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         button_set_new.setOnClickListener(this)
         button_change.setOnClickListener(this)
+        button_all_medicines.setOnClickListener(this)
 
     }
 
@@ -44,6 +52,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (intent.resolveActivity(packageManager) != null) {
 
             startActivity(intent)
+
 
         } else {
 

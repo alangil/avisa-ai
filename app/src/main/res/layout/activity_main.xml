@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/light_green"
+    android:background="@drawable/gradient_3"
     tools:context=".view.MainActivity">
 
     <TextView
@@ -15,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:text="Bem Vindo ao Avisa Aí! O que deseja fazer?"
+        android:text="@string/wellcome"
         android:textSize="16sp" />
 
     <Button
@@ -24,16 +23,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:padding="15dp"
-        android:text="Definir novo alarme" />
+        android:text="@string/definir_novo_alarme" />
 
 
     <Button
-        android:id="@+id/button_list"
+        android:id="@+id/button_all_medicines"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:padding="15dp"
-        android:text="Meus Remédios" />
+        android:text="@string/meus_remedios" />
 
     <Button
         android:id="@+id/button_change"
@@ -41,6 +40,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:padding="15dp"
-        android:text="Modificar Alarmes" />
+        android:text="@string/modificar_alarmes" />
 
 </LinearLayout>
