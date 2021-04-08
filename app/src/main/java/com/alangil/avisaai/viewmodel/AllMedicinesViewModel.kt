@@ -17,4 +17,8 @@ class AllMedicinesViewModel(application: Application): AndroidViewModel(applicat
     fun load(){
         mMedicineList.value = mMedicineRepository.getAll()
     }
+
+    fun delete(id: Int) {
+        mMedicineRepository.delete(id)
+    }
 }

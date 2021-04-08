@@ -48,6 +48,11 @@ class AllMedicinesActivity : AppCompatActivity() {
 
                 startActivity(intent)
             }
+
+            override fun onDelete(id: Int) {
+                mAllMecidinesViewModel.delete(id)
+                mAllMecidinesViewModel.load()
+            }
         }
 
         mAdapter.attachListener(mListener)

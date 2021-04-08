@@ -14,4 +14,8 @@
     <string name="new_qnt_dispo">Nova quantidade disponível:</string>
     <string name="seus_remedios_e_qnt">Seus remédios e quantidades cadastradas =] :</string>
     <string name="def_horario">Definir Horário:</string>
+    <string name="remove_medicine">Remoção do remédio</string>
+    <string name="wish_remove">Deseja remover este remédio?</string>
+    <string name="remove">Remover</string>
+    <string name="cancel">Cancelar</string>
 </resources>

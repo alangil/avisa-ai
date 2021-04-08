@@ -159,13 +159,13 @@ class MedicineRepository private constructor(context: Context) {
         }
     }
 
-    fun delete(medicine: MedicineModel): Boolean {
+    fun delete(id: Int): Boolean {
 
         return try {
             val db = mMedicineDataBaseHelper.writableDatabase
 
-            val selection = DataBaseConstants.MEDICINE.COLUMNS.NAME + " = ?"
-            val args = arrayOf(medicine.nomeMedice)
+            val selection = DataBaseConstants.MEDICINE.COLUMNS.ID + " = ?"
+            val args = arrayOf(id.toString())
 
             db.delete(DataBaseConstants.MEDICINE.TABLE_NAME, selection, args)
 

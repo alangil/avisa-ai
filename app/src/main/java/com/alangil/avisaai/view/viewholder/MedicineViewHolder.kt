@@ -1,5 +1,6 @@
 package com.alangil.avisaai.view.viewholder
 
+import android.app.AlertDialog
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,20 @@ class MedicineViewHolder(itemView: View, private val listener: MedicineListener)
 
         nomeRemedio.setOnClickListener {
             listener.onClick(medicine.id)
+        }
+
+        nomeRemedio.setOnLongClickListener {
+
+            AlertDialog.Builder(itemView.context)
+                .setTitle(R.string.remove_medicine)
+                .setMessage(R.string.wish_remove)
+                .setPositiveButton(R.string.remove){ dialog, which ->
+                    listener.onDelete(medicine.id)
+                }
+                .setNeutralButton(R.string.cancel, null)
+                .show()
+
+            true
         }
 
 
