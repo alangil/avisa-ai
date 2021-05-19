@@ -32,13 +32,18 @@ class AllMedicinesActivity : AppCompatActivity() {
         // 1 = Obter a recycler
         val recycler = recycler_all_medicines
 
-        // 2 = Definir um layout
+        // 2 = Definir um layout que diz como a RecyclerView se comporta
         recycler.layoutManager = LinearLayoutManager(applicationContext)
 
         //3 = Definir um adapter (Juntar elementos de layout e dados)
         recycler.adapter = mAdapter
 
-        mListener = object : MedicineListener{
+        /**
+         * Cria os observadores
+         */
+        observer()
+
+        mListener = object : MedicineListener {
             override fun onClick(id: Int) {
                 val intent = Intent(applicationContext, UpdateMedicineActivity::class.java)
 
@@ -57,7 +62,7 @@ class AllMedicinesActivity : AppCompatActivity() {
 
         mAdapter.attachListener(mListener)
 
-        observer()
+
 
     }
 
@@ -66,6 +71,9 @@ class AllMedicinesActivity : AppCompatActivity() {
         mAllMecidinesViewModel.load()
     }
 
+    /**
+     * Observadores
+     */
     private fun observer() {
         mAllMecidinesViewModel.medicineList.observe(this, {
             mAdapter.updateMedicine(it)

@@ -13,7 +13,7 @@ class UpdateMedicineViewModel(application: Application) : AndroidViewModel(appli
     private val mMediRepository: MedicineRepository = MedicineRepository.getInstance(mContext)
 
     /**
-     * update
+     * update do medicamento
      */
 
     private var mSaveMedicine = MutableLiveData<Boolean>()
@@ -25,7 +25,7 @@ class UpdateMedicineViewModel(application: Application) : AndroidViewModel(appli
     }
 
     /**
-     * load
+     * load do medicamento
      */
 
     private var mMedicine = MutableLiveData<MedicineModel>()

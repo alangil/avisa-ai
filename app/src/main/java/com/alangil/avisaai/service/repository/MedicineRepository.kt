@@ -10,10 +10,13 @@ import java.lang.Exception
 
 class MedicineRepository private constructor(context: Context) {
 
-    // Singleton
+    // Acesso ao banco de dados
 
     private var mMedicineDataBaseHelper: MedicineDataBaseHelper = MedicineDataBaseHelper(context)
 
+    /**
+     * Singleton
+     */
     companion object {
 
         private lateinit var repository: MedicineRepository
@@ -26,8 +29,9 @@ class MedicineRepository private constructor(context: Context) {
         }
     }
 
-    // Singleton
-
+    /**
+     * Insere convidado
+     */
     fun save(medicine: MedicineModel): Boolean {
 
         return try {
@@ -47,7 +51,9 @@ class MedicineRepository private constructor(context: Context) {
 
 
     }
-
+    /**
+     * Faz a listagem de todos os medicamentos
+     */
     fun getAll(): List<MedicineModel> {
         val list: MutableList<MedicineModel> = ArrayList()
 
@@ -92,6 +98,9 @@ class MedicineRepository private constructor(context: Context) {
         }
     }
 
+    /**
+     * Carrega medicamento
+     */
     fun get(id: Int): MedicineModel? {
 
         var medicine: MedicineModel? = null
@@ -138,7 +147,9 @@ class MedicineRepository private constructor(context: Context) {
 
     }
 
-
+    /**
+     * Atualiza convidado
+     */
     fun update(medicine: MedicineModel): Boolean {
 
         return try {
@@ -159,6 +170,9 @@ class MedicineRepository private constructor(context: Context) {
         }
     }
 
+    /**
+     * Remove convidado
+     */
     fun delete(id: Int): Boolean {
 
         return try {

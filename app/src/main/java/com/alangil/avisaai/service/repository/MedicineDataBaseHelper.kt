@@ -6,10 +6,18 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.alangil.avisaai.service.constants.DataBaseConstants
 
 class MedicineDataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+
+    /**
+     * Método executado somente uma vez quando o acesso ao banco de dados é feito pela primeira vez
+     */
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(CREATE_TABLE_MEDICINE)
     }
 
+    /**
+     * Método executado quando a versão do DATABASE_VERSION é alterada
+     * Dessa maneira, a aplicação sabe que o banco de dados foi alterado e é necessário rodar o script de update
+     */
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }

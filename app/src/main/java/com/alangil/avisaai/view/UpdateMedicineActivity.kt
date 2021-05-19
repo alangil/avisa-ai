@@ -25,8 +25,17 @@ class UpdateMedicineActivity : AppCompatActivity(), View.OnClickListener {
 
         mViewModel = ViewModelProvider(this).get(UpdateMedicineViewModel::class.java)
 
+        /**
+         * Define os listeners
+         */
         setListeners()
+        /**
+         * Cria os observadores
+         */
         observe()
+        /**
+         * Carrega os dados
+         */
         loadData()
 
     }
@@ -52,7 +61,9 @@ class UpdateMedicineActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-
+    /**
+     * Define botão de atualizar os dados
+     */
     override fun onClick(v: View) {
         val id = v.id
         if(id == R.id.button_save_update){

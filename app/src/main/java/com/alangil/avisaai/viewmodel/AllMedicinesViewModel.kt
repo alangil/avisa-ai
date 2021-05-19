@@ -14,10 +14,12 @@ class AllMedicinesViewModel(application: Application): AndroidViewModel(applicat
     private val mMedicineList = MutableLiveData<List<MedicineModel>>()
     val medicineList: LiveData<List<MedicineModel>> = mMedicineList
 
+    // Carrega medicamentos
     fun load(){
         mMedicineList.value = mMedicineRepository.getAll()
     }
 
+    // Deleta medicamento
     fun delete(id: Int) {
         mMedicineRepository.delete(id)
     }

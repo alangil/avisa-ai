@@ -19,6 +19,9 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
             supportActionBar!!.hide()
         }
 
+        /**
+         * Animação da SplashActivity
+         */
         val mContraintLayout = splash_layout
         val mAnimationDrawable = mContraintLayout.background as AnimationDrawable
         mAnimationDrawable.setEnterFadeDuration(1500)

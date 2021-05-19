@@ -15,6 +15,7 @@ class DefinirAlarmViewModel(application: Application) : AndroidViewModel(applica
     private var mSaveMedicine = MutableLiveData<Boolean>()
     val saveMedicine: LiveData<Boolean> = mSaveMedicine
 
+    // Salva novo medicamento
     fun save(mediName: String, mediQnt: Int){
         val medicine = MedicineModel(nomeMedice = mediName,qntMedice =  mediQnt)
         mSaveMedicine.value = mMediRepository.save(medicine)

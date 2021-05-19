@@ -18,4 +18,10 @@
     <string name="wish_remove">Deseja remover este remédio?</string>
     <string name="remove">Remover</string>
     <string name="cancel">Cancelar</string>
+    <string name="defina_o_intervalo_entre_doses">Defina o intervalo entre doses:</string>
+    <string name="_4_4_horas">4-4 Horas</string>
+    <string name="_6_6_horas">6-6 Horas</string>
+    <string name="_8_8_horas">8-8 Horas</string>
+    <string name="_12_12_horas">12-12 Horas</string>
+    <string name="_24_24_horas">24-24 Horas</string>
 </resources>

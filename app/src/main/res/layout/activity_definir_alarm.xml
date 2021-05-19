@@ -29,6 +29,56 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/defina_o_intervalo_entre_doses"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radio_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_4_4_horas"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radio_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_6_6_horas"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radio_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_8_8_horas"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radio_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_12_12_horas"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radio_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_24_24_horas"
+            android:textColor="@color/white" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/buttonSetAlarm"

@@ -11,16 +11,20 @@ import com.alangil.avisaai.service.model.MedicineModel
 class MedicineViewHolder(itemView: View, private val listener: MedicineListener): RecyclerView.ViewHolder(itemView) {
 
     fun bind(medicine: MedicineModel){
+        // Obtém os elementos de interface
         val nomeRemedio = itemView.findViewById<TextView>(R.id.text_nome_remedio)
+        // Atribui valores
         nomeRemedio.text = (medicine.nomeMedice + " : ")
 
         val quantidadeRemedio = itemView.findViewById<TextView>(R.id.text_qnt_remedios)
         quantidadeRemedio.text = medicine.qntMedice.toString()
 
+        // Atribui eventos
         nomeRemedio.setOnClickListener {
             listener.onClick(medicine.id)
         }
 
+        // Atribui eventos
         nomeRemedio.setOnLongClickListener {
 
             AlertDialog.Builder(itemView.context)

@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    /**
+     * Definição dos botões
+     */
     override fun onClick(v: View) {
 
         val id = v.id
